@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route } from "react-router-dom";
+import GlobalStyle from "./globalStyles";
+import Layout from "./hoc/Layout";
+import PrivateRoute from "./hoc/PrivateRoute"
+import GuestRoute from "./hoc/GuestRoute"
+
+import Home from "./pages/dashboard/Home";
+import Login from "./pages/account/Login";
+import Signup from "./pages/account/Signup";
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Layout>
+        <PrivateRoute>
+          <Route path='/dashboard/' component={Home} />
+        </PrivateRoute>
+        <GuestRoute>
+          <Route path='/login/' component={Login} />
+          <Route path='/signup/' component={Signup} />
+        </GuestRoute>
+      </Layout>
+    </>
   );
 }
 
 export default App;
+
+
