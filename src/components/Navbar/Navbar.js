@@ -14,28 +14,35 @@ import {
     NavLogout,
     NavMessage,
     NavNotification,
+    HambBurgerWrap,
+    HambBurgerLine,
 } from '../'
 
 
 
-export default function Navbar() {
+export default function Navbar({toggleDash}) {
     return (
         <>
             <NavbarWraper>
+                <HambBurgerWrap onClick={toggleDash}>
+                    <HambBurgerLine />
+                    <HambBurgerLine />
+                    <HambBurgerLine />
+                </HambBurgerWrap>
                 <NavSearchForm>
-                    <SearchInp />
+                    <SearchInp placeholder="Search" />
                     <Submit>Search</Submit>
                 </NavSearchForm>
                 <NavEndSection>
-                    <NavLogout>
-                        <IoMdLogOut/>
-                    </NavLogout>
                     <NavMessage>
                         <BiMessageRoundedDots />
                     </NavMessage>
                     <NavNotification>
                         <IoNotificationsOutline />
                     </NavNotification>
+                    <NavLogout>
+                        <IoMdLogOut/>
+                    </NavLogout>
 
                 </NavEndSection>
             </NavbarWraper>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {NavLink} from "react-router-dom"
 export const DashboardWraper = styled.div`
-    width: 250px;
+    width: 255px;
     min-height: 100vh;
 
     display: flex;
@@ -11,6 +11,12 @@ export const DashboardWraper = styled.div`
     background-color: #343a40;
     overflow-y: scroll;
     height: 100vh;
+    transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    transform: translateX(${({show}) => show? '0': '-100%'});
+    position: absolute;
+
+    
 `
 
 
@@ -27,7 +33,7 @@ export const DashLink = styled(NavLink)`
     align-items: center;
     background-color: #2f343a;
     border-radius: 5px;
-    transition: all .4s ;
+    transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     &:hover{
         background: #272c31;
     }

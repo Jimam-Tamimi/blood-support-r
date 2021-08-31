@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -63,3 +63,24 @@ const GlobalStyle = createGlobalStyle`
 `;
  
 export default GlobalStyle;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  margin-left: ${({show, smallDevice}) => show && !smallDevice? '255px': '0px'};
+
+  transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+`
+
+export const Wraper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`

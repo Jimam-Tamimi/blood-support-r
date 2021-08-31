@@ -23,7 +23,7 @@ import {
 } from "../";
 
 
-export default function Dashboard() {
+export default function Dashboard({show, toggleDashOnSmallDevice}) {
     const dashLinks = [
         {to:"/", name: 'Dashboard', icon: AiFillDashboard},
         {to:"/help-people/", name: 'Help People', icon:FaHandsHelping},
@@ -40,9 +40,11 @@ export default function Dashboard() {
 
         {to:"/settings/", name: 'Settings', icon:FiSettings},
     ]
+
+    
   return (
     <>
-      <DashboardWraper>
+      <DashboardWraper show={show}>
             <DashboardLogo exact to="/">
                 <Logo  src={logo}/>
                 <LogoText>
@@ -53,7 +55,7 @@ export default function Dashboard() {
                 dashLinks.map((link, i) => {
                     return (
                         <>
-                        <DashLink  activeClassName="active"  key={i} to={link.to} exact>
+                        <DashLink  key={i} onClick={() => toggleDashOnSmallDevice()} activeClassName="active"  to={link.to} exact>
                             <LinkIcon>
                                 <link.icon/>
                             </LinkIcon>
