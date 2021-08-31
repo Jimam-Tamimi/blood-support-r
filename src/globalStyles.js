@@ -7,24 +7,46 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Source Sans Pro', sans-serif;
-    
+    transition: var(--main-transition) !important ;
   }
   
   :root {
-  --primary-color: #dc3545;
-  --primary-text-color: white;
-  --primary-hover-color: #b52a37;
 
-  --secendory-color: #2f343a;
-  --secendory-text-color: white;
-  --secendory-hover-color: #272c31;
+    
+    --for-active-click: scale(.92);
+    --main-transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --primary-color: #dc3545;
+    --primary-text-color: white;
+    --primary-hover-color: #b52a37;
+    ${
+      ({darkMode}) => {
+        if(darkMode){
+          return `
 
-  --main-bg-color: #212427;
+          --secendory-color: #2f343a;
+          --secendory-text-color: white;
+          --secendory-hover-color: #272c31;
 
-  --object-bg-color: #343a40;
+          --main-bg-color: #212427;
 
-  --for-active-click: scale(.95);
-  --main-transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          --object-bg-color: #343a40;
+
+          `
+        } else {
+          return `
+
+
+          --secendory-color: #dfe5ec;
+          --secendory-text-color: black;
+          --secendory-hover-color: #c5ccd4;
+          --main-bg-color: #f2f6fb;
+          --object-bg-color: #ffffff;
+
+          `
+        }
+      }
+    }
+ 
   }
   html {
       scroll-behavior: smooth;

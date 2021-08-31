@@ -87,6 +87,7 @@ export const DropDownHeading = styled.div`
     width: 100%;
     padding: 4px 0px 15px 0px;
     font-size: 20px;
+    color: var(--secendory-text-color);
 `
 
 
@@ -118,9 +119,12 @@ export const Message = styled(DashLink)`
     justify-content: flex-start;
     min-height: 80px;
 
+    color: var(--secendory-text-color);
     z-index: 1000;
     &.active{
         background: var(--secendory-hover-color);
+        color: var(--secendory-text-color);
+        
     }
     &::after{
         background: var(--secendory-hover-color);
@@ -200,3 +204,12 @@ export const HambBurgerLine = styled.div`
 
 `
 
+
+
+export const ModeWrap = styled.div`
+    margin-right: 20px;
+    position: relative;
+    top: 3.69px;
+    margin-right: 12px;
+
+`

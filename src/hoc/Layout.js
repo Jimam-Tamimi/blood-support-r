@@ -3,12 +3,19 @@ import Dashboard from '../components/Dashboard/Dashboard'
 import Navbar from '../components/Navbar/Navbar'
 import { Container, Wraper } from '../globalStyles'
 import { useState } from 'react'
+import GlobalStyle from "../globalStyles";
+
 
 export default function Layout({children}) {
     let width = window.innerWidth
     const [show, setShow] = useState(width <= 748? false: true)
-
     const [smallDevice, setSmallDevice] = useState(width <= 748? true: false)
+    let darkMd = localStorage.getItem('darkMode') 
+    const [darkMode, setDarkMode] = useState(darkMd == null?true:JSON.parse(darkMd))
+    
+    useEffect(() => {
+        localStorage.setItem('darkMode', darkMode)
+    }, [darkMode])
 
     const toggleDash = () => {
         setShow(!show)
@@ -36,12 +43,13 @@ export default function Layout({children}) {
 
     return (
         <>
+            <GlobalStyle darkMode={darkMode} />
             <Wraper>
                 
                 <Dashboard  toggleDashOnSmallDevice={toggleDashOnSmallDevice} show={show} />
 
                 <Container onClick={() => smallDevice && show?setShow(false):null}  smallDevice={smallDevice} show={show}>
-                    <Navbar toggleDash={toggleDash} />
+                    <Navbar  setDarkMode={setDarkMode} darkMode={darkMode} toggleDash={toggleDash} />
                     {children}
                 </Container>
             </Wraper>

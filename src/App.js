@@ -1,5 +1,4 @@
 import { Route } from "react-router-dom";
-import GlobalStyle from "./globalStyles";
 import Layout from "./hoc/Layout";
 import PrivateRoute from "./hoc/PrivateRoute"
 import GuestRoute from "./hoc/GuestRoute"
@@ -12,7 +11,6 @@ function App() {
   
   return (
     <>
-      <GlobalStyle />
       <Layout>
         <PrivateRoute>
           <Route path='/dashboard/' component={Home} />

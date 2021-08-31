@@ -11,10 +11,11 @@ export const DashboardWraper = styled.div`
     background-color: var(--object-bg-color);
     overflow-y: scroll;
     height: 100vh;
-    transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: var(--main-transition);
 
     transform: translateX(${({show}) => show? '0': '-100%'});
     position: absolute;
+    z-index: 500;
 
     
 `
@@ -33,8 +34,10 @@ export const DashLink = styled(NavLink)`
     align-items: center;
     background-color: var(--secendory-color);
     border-radius: 5px;
-    transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: var(--main-transition);
     position: relative;
+    z-index: 1;
+
 
 
     &:hover::after{
@@ -55,7 +58,7 @@ export const DashLink = styled(NavLink)`
         right: 0;
         width: 100%;
         height: 100%;
-        transition: all .4s;
+        transition: var(--main-transition);
         transform: scaleX(0);
         z-index: -2;
 
@@ -63,7 +66,7 @@ export const DashLink = styled(NavLink)`
 
     &.active{
         background: var(--primary-color);
-        color: var(--primary-text-color) !important;
+        color: var(--primary-text-color) ;
     }
     &.active:hover::after{
         background: var(--primary-hover-color);
@@ -75,10 +78,14 @@ export const DashLink = styled(NavLink)`
 export const DashboardLogo = styled(DashLink)`
     height: 70px;
     background: var(--object-bg-color) !important;
+    color: var(--secendory-text-color);
     justify-content: space-between;
     padding: 0px 10px;
     &::after{
         content: none;
+    }
+    &.active{
+        color: var(--secendory-text-color) ;
     }
 
 
