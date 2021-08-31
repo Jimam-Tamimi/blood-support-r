@@ -8,7 +8,7 @@ export const DashboardWraper = styled.div`
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: #343a40;
+    background-color: var(--object-bg-color);
     overflow-y: scroll;
     height: 100vh;
     transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -31,26 +31,53 @@ export const DashLink = styled(NavLink)`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2f343a;
+    background-color: var(--secendory-color);
     border-radius: 5px;
     transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    &:hover{
-        background: #272c31;
+    position: relative;
+
+    &:hover::after{
+        background: var(--secendory-hover-color);
+        transform: scaleX(1);
+        opacity: 1;
+        
     }
+    &:active{
+        transform: scaleX(.95);
+    }
+    &::after{
+        opacity: .6;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        transition: all .4s;
+        transform: scaleX(0);
+    }
+
     &.active{
-        background: #dc3545;
+        background: var(--primary-color);
+        color: var(--primary-text-color) !important;
     }
-    &.active:hover{
-        background: #b52a37;
+    &.active:hover::after{
+        background: var(--primary-hover-color);
+        transform: scaleX(1);
     }
 
 `
 
 export const DashboardLogo = styled(DashLink)`
     height: 70px;
-    background: #343a40 !important;
+    background: var(--object-bg-color) !important;
     justify-content: space-between;
     padding: 0px 10px;
+    &::after{
+        content: none;
+    }
 
 
 `
@@ -76,6 +103,8 @@ export const LinkIcon = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    z-index: 100;
+
 `
 
 export const LinkText = styled.div`
@@ -85,4 +114,6 @@ export const LinkText = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    z-index: 100;
+
 `

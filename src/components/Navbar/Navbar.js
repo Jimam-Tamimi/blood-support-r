@@ -13,6 +13,9 @@ import {
     NavEndSection,
     NavLogout,
     NavMessage,
+    NavMessageWrap,
+    NavMessageCont,
+    NavNotificationWrap,
     NavNotification,
     HambBurgerWrap,
     HambBurgerLine,
@@ -34,12 +37,17 @@ export default function Navbar({toggleDash}) {
                     <Submit>Search</Submit>
                 </NavSearchForm>
                 <NavEndSection>
-                    <NavMessage>
-                        <BiMessageRoundedDots />
-                    </NavMessage>
-                    <NavNotification>
-                        <IoNotificationsOutline />
-                    </NavNotification>
+                    <NavMessageWrap>
+                        <NavMessage>
+                            <BiMessageRoundedDots />
+                        </NavMessage>
+                        <NavMessageCont></NavMessageCont>
+                    </NavMessageWrap>
+                    <NavNotificationWrap>
+                        <NavNotification>
+                            <IoNotificationsOutline />
+                        </NavNotification>
+                    </NavNotificationWrap>
                     <NavLogout>
                         <IoMdLogOut/>
                     </NavLogout>

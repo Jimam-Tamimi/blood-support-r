@@ -9,16 +9,33 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Source Sans Pro', sans-serif;
     
   }
+  
+  :root {
+  --primary-color: #dc3545;
+  --primary-text-color: white;
+  --primary-hover-color: #b52a37;
+
+  --secendory-color: #2f343a;
+  --secendory-text-color: white;
+  --secendory-hover-color: #272c31;
+
+  --main-bg-color: #212427;
+
+  --object-bg-color: #343a40;
+  --main-transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
   html {
       scroll-behavior: smooth;
   }
   body{
-      background-color: #000000;
-      color: white;
+      background-color: var(--main-bg-color);
+      color: var(--secendory-text-color);
   }
+
+  
   a{
       text-decoration: none;
-      color: white;
+      color: var(--secendory-text-color);
   }
   
   @media only screen and (min-width: 768px){
@@ -74,7 +91,7 @@ export const Container = styled.div`
 
   margin-left: ${({show, smallDevice}) => show && !smallDevice? '255px': '0px'};
 
-  transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: var(--main-transition);
 
 `
 
