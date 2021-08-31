@@ -36,14 +36,14 @@ export const DashLink = styled(NavLink)`
     transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
 
+
     &:hover::after{
         background: var(--secendory-hover-color);
         transform: scaleX(1);
         opacity: 1;
-        
     }
     &:active{
-        transform: scaleX(.95);
+        transform: var(--for-active-click);
     }
     &::after{
         opacity: .6;
@@ -57,6 +57,8 @@ export const DashLink = styled(NavLink)`
         height: 100%;
         transition: all .4s;
         transform: scaleX(0);
+        z-index: -2;
+
     }
 
     &.active{

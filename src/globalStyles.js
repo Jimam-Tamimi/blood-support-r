@@ -22,6 +22,8 @@ const GlobalStyle = createGlobalStyle`
   --main-bg-color: #212427;
 
   --object-bg-color: #343a40;
+
+  --for-active-click: scale(.95);
   --main-transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   html {
@@ -88,6 +90,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+  
 
   margin-left: ${({show, smallDevice}) => show && !smallDevice? '255px': '0px'};
 

@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+import {DashLink} from '../'
 
 
 export const NavbarWraper = styled.header`
@@ -65,6 +66,9 @@ export const NavMessage = styled.div`
     &:hover{
         background: var(--secendory-hover-color);
     }
+    &:active{
+        transform: var(--for-active-click);
+    }
 `
 
 export const NavMessageWrap = styled.div`
@@ -76,21 +80,98 @@ export const NavNotificationWrap = styled(NavMessageWrap)``
 
 export const NavNotification = styled(NavMessage)``
 
+export const DropDownHeading = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 4px 0px 15px 0px;
+    font-size: 20px;
+`
+
+
+
 export const NavMessageCont = styled.div`
     position: absolute;
     top: 62px;
     right: 20px;
-    width: 265px;
-    height: 78vh;
+    width: 330px;
+    height: 85vh;
     background: var(--object-bg-color);
     border-radius: 3px;
-    /* box-shadow: 0px 0px 13px #ffffff33; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10px;
+    overflow-y: scroll;
+    transition: var(--main-transition);
+    z-index: ${({message}) => message? '100': '-100'};
+    transform: translateX(${({message}) => message? '0': '10px'});
+    opacity: ${({message}) => message? '1': '0'};
 `
 
-export const NavNotificationCont = styled.div`
+export const Message = styled(DashLink)`
+    display: flex;
+    height: auto;
+    padding: 10px 10px;
+    justify-content: flex-start;
+    min-height: 80px;
+
+    z-index: 1000;
+    &.active{
+        background: var(--secendory-hover-color);
+    }
+    &::after{
+        background: var(--secendory-hover-color);
+    }
+    &.active:hover::after{
+        background: var(--secendory-hover-color);
+    }
+`
+export const Notification = styled(Message)`
+
 `
 
 
+export const MsgInfo = styled.div`
+    
+`
+export const Name = styled.h4`
+    font-size: 20px;
+    font-weight: 600;
+
+`
+export const Msg = styled.p`
+    font-size: 13px;
+    margin-top: 3px;
+    font-weight: 500;
+
+`
+
+export const ProfImg = styled.img`
+    width: 55px;
+    border-radius: 100%;
+    object-fit: cover;
+    height: 55px;
+    margin-right: 12px;
+
+`
+
+export const NavNotificationCont = styled(NavMessageCont)`
+
+z-index: ${({notification}) => notification? '100': '-100'};
+    transform: translateX(${({notification}) => notification? '0': '10px'});
+    opacity: ${({notification}) => notification? '1': '0'};
+
+
+`
+export const NotImg = styled(ProfImg)``
+export const NotMsg = styled(Msg)`
+    font-size: 15px;
+    margin-top: 0px;
+    font-weight: 500;
+`
 
 export const NavLogout = styled(NavMessage)``
 
@@ -104,6 +185,9 @@ export const HambBurgerWrap = styled.div`
     &:hover > div{
         background: var(--secendory-text-color);
     }
+    &:active{
+        transform: var(--for-active-click);
+    }
 `
 
 export const HambBurgerLine = styled.div`
@@ -112,6 +196,7 @@ export const HambBurgerLine = styled.div`
     background: white;
     margin: 6px 0px;
     transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
 
 `
 
