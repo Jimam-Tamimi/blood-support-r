@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import Dashboard from '../components/Dashboard/Dashboard'
 import Navbar from '../components/Navbar/Navbar'
 import { Container, Wraper } from '../globalStyles'
 import { useState } from 'react'
 import GlobalStyle from "../globalStyles";
+import MessagePopup from '../components/MessagePopup/MessagePopup'
 
 
 export default function Layout({children}) {
@@ -52,6 +53,7 @@ export default function Layout({children}) {
                     <Navbar  setDarkMode={setDarkMode} darkMode={darkMode} toggleDash={toggleDash} />
                     {children}
                 </Container>
+                <MessagePopup />
             </Wraper>
         </>
     )
