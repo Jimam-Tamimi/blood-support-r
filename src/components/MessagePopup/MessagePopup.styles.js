@@ -46,6 +46,9 @@ export const MessageCont = styled.div`
     bottom: 15px;
     right: 15px;
     ${flex}
+    
+    
+    
 
 `
 
@@ -71,6 +74,7 @@ export const MessageWraper = styled.div`
             `
         }
     }}
+   
 `
 
 export const MessageHeaderTitle = styled.div`
@@ -88,9 +92,7 @@ export const MessageDetails = styled.div`
     justify-content: flex-start;
 `
 
-// export const ProfImg = styled(FullScreen)`
 
-// `
 export const MsgProfImg = styled(ProfImg)`
     width: 40px;
     height: 40px;
@@ -162,7 +164,3 @@ export const MessageInputBox = styled.input`
     box-shadow: 0px 0px 17px 2px #00000040;
 `
 
-
-export const FullScreenIconWraper = styled(CloseIconWrap)`
- 
-`
