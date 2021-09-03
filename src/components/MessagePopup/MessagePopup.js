@@ -1,32 +1,50 @@
-import React from 'react'
-// import {IoClose} from 'react-icons/io5'
+import React, {useState, useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import prof from '../../assets/img/prof.jpg'
+
+import Animated from "react-mount-animation";
+
+
+import { removeMessage } from '../../redux/messagePop/actions'
+import Message from './Message'
+
+
 import { 
-    MessageWraper, 
-    MessageHeaderTitle,
-    MessageDetails,
-    // FullScreen,
-    MsgProfImg,
-    ProfName,
-    CloseIconWrap,
-    CloseIcon,
+    MessageCont,
+
 } from './MessagePopup.styles'
 
 export default function MessagePopup() {
+    const message = useSelector(state => state.message)
+    const dispatch = useDispatch()
+    const msgPops = []
+        message.map(id =>{
+            // get user data from messsage id from api 
+            msgPops.push({
+                id: id,
+                name: 'Jimam Tamimi',
+                image: prof,
+                profileId: 23232,
+            })
+        })
+    
+    
+
     return (
         <>
-            <MessageWraper>
-                <MessageHeaderTitle>
-                    {/* <FullScreen /> */}
-                    <MessageDetails>
-                        <MsgProfImg src={prof} />
-                        <ProfName to="/jimam">Jimam Tamimi</ProfName>
-                    </MessageDetails>
-                    <CloseIconWrap>
-                        <CloseIcon />
-                    </CloseIconWrap>
-                </MessageHeaderTitle>
-            </MessageWraper>
+            <MessageCont>
+                {
+
+                    msgPops.map(({id, name, image, profileId}) => {
+                        
+                        return  <Message key={id} id={id} name={name} image={image} profileId={profileId} />
+                        
+                    })
+                }
+                
+                
+            </MessageCont>
+            
         </>
     )
 }

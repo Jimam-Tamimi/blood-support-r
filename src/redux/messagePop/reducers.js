@@ -3,7 +3,7 @@ import { ADD_MESSAGE, REMOVE_MESSAGE } from "./types"
 
 
 let messagesId = localStorage.getItem('messagesId')
-if(messagesId === null){
+if(messagesId === null || messagesId === ''){
     messagesId = []
 }
 else{
@@ -20,6 +20,9 @@ const messageReducer = (state=initialState, action) => {
                 ...state,
                 payload.id
             ]
+            while(msgIdAdd.length > 3 ){
+                msgIdAdd.shift()
+            }
             localStorage.setItem('messagesId', msgIdAdd)
             return msgIdAdd
 

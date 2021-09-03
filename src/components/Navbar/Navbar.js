@@ -115,24 +115,45 @@ export default function Navbar({toggleDash, setDarkMode, darkMode}) {
                         </NavMessage>
                         <NavMessageCont ref={msgRef} message={message}>
                             <DropDownHeading>All Messages</DropDownHeading>
-                            <Message onClick={(e) => handleNavMsgClick(e, 123323)} to="/msg/rnghef">
+                            <Message onClick={(e) => handleNavMsgClick(e, 1)} to="/msg/rnghef">
                                 <ProfImg src={prof} />
                                 <MsgInfo>
-                                    <Name>Jimam Tamimi</Name>
+                                    <Name>Jimam Tamimi 1</Name>
                                     <Msg>Jimam Is A Very Good Boy</Msg>
                                 </MsgInfo>
                             </Message>
-                            <Message onClick={(e) => handleNavMsgClick(e, 454566)} to="/msg/rnghef">
+                            <Message onClick={(e) => handleNavMsgClick(e, 2)} to="/msg/rnghef">
                                 <ProfImg src={prof} />
                                 <MsgInfo>
-                                    <Name>Jimam Tamimi</Name>
+                                    <Name>Jimam Tamimi 2</Name>
                                     <Msg>Jimam Is A Very Good Boy</Msg>
                                 </MsgInfo>
                             </Message>
-                            <Message onClick={(e) => handleNavMsgClick(e, 1235464323)} to="/msg/rnghef">
+                            <Message onClick={(e) => handleNavMsgClick(e, 3)} to="/msg/rnghef">
                                 <ProfImg src={prof} />
                                 <MsgInfo>
-                                    <Name>Jimam Tamimi</Name>
+                                    <Name>Jimam Tamimi 3</Name>
+                                    <Msg>Jimam Is A Very Good Boy</Msg>
+                                </MsgInfo>
+                            </Message>
+                            <Message onClick={(e) => handleNavMsgClick(e, 4)} to="/msg/rnghef">
+                                <ProfImg src={prof} />
+                                <MsgInfo>
+                                    <Name>Jimam Tamimi 4</Name>
+                                    <Msg>Jimam Is A Very Good Boy</Msg>
+                                </MsgInfo>
+                            </Message>
+                            <Message onClick={(e) => handleNavMsgClick(e, 5)} to="/msg/rnghef">
+                                <ProfImg src={prof} />
+                                <MsgInfo>
+                                    <Name>Jimam Tamimi 5</Name>
+                                    <Msg>Jimam Is A Very Good Boy</Msg>
+                                </MsgInfo>
+                            </Message>
+                            <Message onClick={(e) => handleNavMsgClick(e, 6)} to="/msg/rnghef">
+                                <ProfImg src={prof} />
+                                <MsgInfo>
+                                    <Name>Jimam Tamimi 6</Name>
                                     <Msg>Jimam Is A Very Good Boy</Msg>
                                 </MsgInfo>
                             </Message>
