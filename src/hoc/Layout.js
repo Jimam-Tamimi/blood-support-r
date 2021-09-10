@@ -6,6 +6,9 @@ import { useState } from 'react'
 import GlobalStyle from "../globalStyles";
 import MessagePopup from '../components/MessagePopup/MessagePopup'
 
+import PrivateComponent from './PrivateComponent'
+import GuestComponent from './GuestComponent'
+import AlertComponent from '../components/Alert/AlertComponent'
 
 export default function Layout({children}) {
     let width = window.innerWidth
@@ -45,6 +48,8 @@ export default function Layout({children}) {
     return (
         <>
             <GlobalStyle darkMode={darkMode} />
+            < AlertComponent />
+
             <Wraper>
                 
                 <Dashboard  toggleDashOnSmallDevice={toggleDashOnSmallDevice} show={show} />

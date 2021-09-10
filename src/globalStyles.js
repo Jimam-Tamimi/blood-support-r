@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle, css } from 'styled-components'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -124,5 +124,11 @@ export const Wraper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+`
+
+export const Flex = css`
+  display: flex;
+  justify-content: center;
   align-items: center;
 `

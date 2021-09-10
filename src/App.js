@@ -6,6 +6,9 @@ import GuestRoute from "./hoc/GuestRoute"
 import Home from "./pages/dashboard/Home";
 import Login from "./pages/account/Login";
 import Signup from "./pages/account/Signup";
+import ResetPassword from "./pages/account/ResetPassword";
+import Activate from "./pages/account/Activate";
+
 
 function App() {
   
@@ -18,6 +21,9 @@ function App() {
         <GuestRoute>
           <Route path='/login/' component={Login} />
           <Route path='/signup/' component={Signup} />
+          <Route path='/reset-password/' component={ResetPassword} />
+          <Route path='/activate/:uid/:token/' component={Activate} />
+
         </GuestRoute>
       </Layout>
     </>
