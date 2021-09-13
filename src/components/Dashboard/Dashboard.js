@@ -27,7 +27,7 @@ export default function Dashboard({show, toggleDashOnSmallDevice}) {
     const dashLinks = [
         {to:"/", name: 'Dashboard', icon: AiFillDashboard},
         {to:"/help-people/", name: 'Help People', icon:FaHandsHelping},
-        {to:"/make-request/", name: 'Make Request People', icon:AiOutlineForm},
+        {to:"/make-request/", name: 'Make Request', icon:AiOutlineForm},
         {to:"/current/", name: 'Current', icon:BiTimer},
         {to:"/all-blood-requests/", name: 'All Blood Requests', icon:GiPlayerPrevious},
         {to:"/all-donor-requests/", name: 'All Donor Requests', icon:BiDonateBlood},

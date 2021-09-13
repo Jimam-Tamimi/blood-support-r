@@ -4,6 +4,9 @@ import PrivateRoute from "./hoc/PrivateRoute"
 import GuestRoute from "./hoc/GuestRoute"
 
 import Home from "./pages/dashboard/Home";
+import MakeRequest from "./pages/dashboard/MakeRequest";
+
+
 import Login from "./pages/account/Login";
 import Signup from "./pages/account/Signup";
 import ResetPassword from "./pages/account/ResetPassword";
@@ -17,6 +20,7 @@ function App() {
       <Layout>
         <PrivateRoute>
           <Route path='/dashboard/' component={Home} />
+          <Route path='/make-request/' component={MakeRequest} />
         </PrivateRoute>
         <GuestRoute>
           <Route path='/login/' component={Login} />

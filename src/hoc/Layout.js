@@ -10,6 +10,9 @@ import PrivateComponent from './PrivateComponent'
 import GuestComponent from './GuestComponent'
 import AlertComponent from '../components/Alert/AlertComponent'
 
+import styled from 'styled-components'
+
+
 export default function Layout({children}) {
     let width = window.innerWidth
     const [show, setShow] = useState(width <= 748? false: true)
@@ -56,10 +59,18 @@ export default function Layout({children}) {
 
                 <Container onClick={() => smallDevice && show?setShow(false):null}  smallDevice={smallDevice} show={show}>
                     <Navbar  setDarkMode={setDarkMode} darkMode={darkMode} toggleDash={toggleDash} />
-                    {children}
+                    <Content>
+                        {children}
+                    </Content>
                 </Container>
                 <MessagePopup />
             </Wraper>
         </>
     )
 }
+
+
+const Content = styled.div`
+    width: 96%;
+    margin: 30px 0px;
+`

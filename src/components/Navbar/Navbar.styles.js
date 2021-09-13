@@ -9,7 +9,7 @@ export const NavbarWraper = styled.header`
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    box-shadow: 0px 1px 7px 0px #ffffff6b;
+    box-shadow: 0px 1px 7px 0px var(--main-box-shadow-color);
 `
 
 export const NavSearchForm = styled.form`

@@ -43,13 +43,13 @@ const msgMount = keyframes`
 
 export const MessageCont = styled.div`
     position: fixed;
-    bottom: 15px;
-    right: 15px;
-    ${flex}
-    
-    
-    
 
+    ${flex}
+
+    padding-bottom: 15px;
+    padding-right: 15px;
+    right: 0;
+    bottom: 0;
 `
 
 
@@ -64,7 +64,7 @@ export const MessageWraper = styled.div`
     ${flex}
     flex-direction: column;
     justify-content: flex-start;
-    box-shadow: 0px 0px 15px 2px #00000061;
+    box-shadow: 0px 0px 15px 2px var(--main-box-shadow-color);
     animation: ${msgMount} .4s linear  1;
     ${({closeMessageId, msgId}) => {
         if(closeMessageId == msgId){

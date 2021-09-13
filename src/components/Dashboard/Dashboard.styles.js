@@ -65,8 +65,8 @@ export const DashLink = styled(NavLink)`
     }
 
     &.active{
-        background: var(--primary-color);
-        color: var(--primary-text-color) ;
+        background: var(--primary-color) !important;
+        color: var(--primary-text-color) !important;
     }
     &.active:hover::after{
         background: var(--primary-hover-color);
@@ -86,6 +86,7 @@ export const DashboardLogo = styled(DashLink)`
     }
     &.active{
         color: var(--secendory-text-color) ;
+        background: var(--object-bg-color) !important;
     }
 
 
@@ -113,6 +114,7 @@ export const LinkIcon = styled.div`
     justify-content: flex-start;
     align-items: center;
     z-index: 100;
+    color: inherit;
 
 `
 
@@ -124,5 +126,7 @@ export const LinkText = styled.div`
     justify-content: flex-start;
     align-items: center;
     z-index: 100;
+    color: inherit;
+
 
 `

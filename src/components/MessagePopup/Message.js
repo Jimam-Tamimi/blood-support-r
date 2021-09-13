@@ -52,7 +52,7 @@ export default function Message({id, name, image, profileId}) {
 
                 </MessagesDiv>
                 <SendMessaageDiv>
-                    {/* <Picker set='apple' /> */}
+                    {/* <Picker set='facebook' /> */}
                     <EmojiMessageDiv>
                         <HiEmojiHappy />
                     </EmojiMessageDiv>
