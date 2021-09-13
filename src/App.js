@@ -11,6 +11,7 @@ import Login from "./pages/account/Login";
 import Signup from "./pages/account/Signup";
 import ResetPassword from "./pages/account/ResetPassword";
 import Activate from "./pages/account/Activate";
+import HelpPeople from "./pages/dashboard/HelpPeople";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <PrivateRoute>
           <Route path='/dashboard/' component={Home} />
           <Route path='/make-request/' component={MakeRequest} />
+          <Route path='/help-people/' component={HelpPeople} />
         </PrivateRoute>
         <GuestRoute>
           <Route path='/login/' component={Login} />
