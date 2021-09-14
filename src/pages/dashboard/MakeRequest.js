@@ -68,7 +68,7 @@ export default function MakeRequest() {
             />
           </InputDiv>
           <InputDiv style={{display: 'flex', justifyContent: 'flex-end', width: '100%'}} size={12}>
-            <Button >Request</Button>
+            <Button blockOnSmall >Request</Button>
           </InputDiv>
         </Form>
       </FormWrap>

@@ -21,6 +21,8 @@ const GlobalStyle = createGlobalStyle`
     --primary-color: #dc3545;
     --primary-text-color: white ;
     --primary-hover-color: #b52a37;
+    --info-color: #0d6efd;
+    --info-hover-color: #0c5bce;
     --main-box-shadow-color:  #00000061;
     ${
       ({darkMode}) => {
@@ -197,7 +199,7 @@ export const Button = styled.button`
     font-size: 16px;
 
     color: var(--primary-text-color);
-    background: var(--primary-color);
+
     border: none;
     border-radius: 4px;
     margin: 0px 5px ;
@@ -209,17 +211,38 @@ export const Button = styled.button`
         font-size: 13.33px;
       `:''
     )}
+    ${({blockOnSmall}) => (
+      blockOnSmall? `
+        @media only screen and (max-width: 748px) {
+          &{
+            width: 100%;
+          }
+        }
+      `:''
+    )}
 
-    @media only screen and (max-width: 748px) {
-      &{
-        width: 100%;
-      }
+  background: var(--primary-color);
+    &:hover{
+        background: var(--primary-hover-color);
     }
-
 
     &:active{
         transform: var(--for-active-click);
     }
+
+
+    ${({info}) => (
+      info?
+      `
+        background: var(--info-color);
+        &:hover{
+          background: var(--info-hover-color);
+        }
+        
+      `:''
+    )}
+    
+    
 `
 
 // custom styling for React Select Component
