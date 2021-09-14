@@ -160,7 +160,6 @@ export const Form = styled.form`
 `
 
 export const InputDiv = styled.div`
-  height: 48px;
   width: ${({size=12}) => `calc(${(100 / 12 ) * size}% - 10px)`};
   margin-bottom: 20px;
   @media only screen and (max-width: 748px) {
@@ -181,6 +180,15 @@ export const Input = styled.input`
     outline: none;
     width: 100%;
     height: 100%;
+    color: var(--secendory-text-color);
+    height: 48px;
+    margin: 10px 0px;
+
+`
+
+export const Label = styled.label`
+    font-size: 18px;
+    border: none;
     color: var(--secendory-text-color);
 `
 
@@ -224,7 +232,8 @@ export const customStyles = {
   }),
   control: (provided) => ({
       ...provided,
-      height: '100%',
+      height: '48px',
+      margin: '10px 0px',
       background: 'var(--secendory-color)',
       border: 'none',
   }),

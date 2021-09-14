@@ -20,7 +20,7 @@ import {
     LinkIcon,
     LinkText,
     DashboardLogo,
-} from "../";
+} from "./Dashboard.styles";
 
 
 export default function Dashboard({show, toggleDashOnSmallDevice}) {
@@ -51,6 +51,7 @@ export default function Dashboard({show, toggleDashOnSmallDevice}) {
                     BloodSupport
                 </LogoText>
             </DashboardLogo>
+            
             {
                 dashLinks.map((link, i) => {
                     return (

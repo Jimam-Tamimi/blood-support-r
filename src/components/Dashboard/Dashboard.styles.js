@@ -14,7 +14,8 @@ export const DashboardWraper = styled.div`
     transition: var(--main-transition);
 
     transform: translateX(${({show}) => show? '0': '-100%'});
-    position: absolute;
+
+    position: fixed;
     z-index: 500;
 
     

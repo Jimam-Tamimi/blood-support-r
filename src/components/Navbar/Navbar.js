@@ -33,7 +33,7 @@ import {
     HambBurgerWrap,
     HambBurgerLine,
     ModeWrap,
-} from '../'
+} from './Navbar.styles'
 import { NavNotificationCont } from './Navbar.styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { addMessage } from '../../redux'

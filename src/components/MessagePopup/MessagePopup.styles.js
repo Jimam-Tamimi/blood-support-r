@@ -2,7 +2,7 @@ import styled, {css, keyframes} from "styled-components";
 
 import {Link} from 'react-router-dom'
 
-import {ProfImg} from '../'
+import {ProfImg} from '../Navbar/Navbar.styles'
 
 const flex = css`
     display: flex;

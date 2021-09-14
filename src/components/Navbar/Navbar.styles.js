@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {DashLink} from '../'
+import {DashLink} from '../Dashboard/Dashboard.styles'
 
 
 export const NavbarWraper = styled.header`
@@ -10,6 +10,8 @@ export const NavbarWraper = styled.header`
     align-items: center;
     height: 80px;
     box-shadow: 0px 1px 7px 0px var(--main-box-shadow-color);
+    background: var(--main-bg-color);
+
 `
 
 export const NavSearchForm = styled.form`
