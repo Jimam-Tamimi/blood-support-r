@@ -5,7 +5,7 @@ import {Flex} from '../../globalStyles'
 export const BloodRequestBox = styled.div`
     width: 325px;
     padding-bottom: 15px;
-
+    margin: 15px 10px;
     ${Flex}
     flex-direction: column;
     align-items: flex-start;
@@ -49,9 +49,23 @@ export const Value = styled.span`
     margin-left: 2px;
 `
 
-export const Actions = styled.div`
+export const Wrap = styled.div`
     width: 100%;
+   ${Flex}
+   justify-content: space-between;
+   align-items: flex-end;
+
+`
+
+export const Actions = styled.div`
     display: flex;
     justify-content: flex-end;
     margin-top: 11px;
+`
+
+export const NumOfReq = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 `

@@ -6,10 +6,12 @@ import {
     RequestDetails,
     Field,
     Value,
+    Wrap,
     Actions,
+    NumOfReq,
 } from './BloodRequest.styles'
 
-import { Button } from '../../globalStyles'
+import { Button, Badge } from '../../globalStyles'
 
 export default function BloodRequest() {
     const [details, setDetails] = useState({
@@ -29,6 +31,10 @@ export default function BloodRequest() {
 
                 </RequestAddress>
                 <RequestDetails>
+                    <NumOfReq style={{width: '100%'}}>
+                        <Badge info sm>10</Badge>
+                    </NumOfReq>
+
                     {
                         Object.keys(details).map((key, i) => (
                             <>
@@ -36,10 +42,17 @@ export default function BloodRequest() {
                             </>
                         ))
                     }
-                    <Actions>
-                        <Button  style={{padding: '10px 15px',}} sm>Report</Button>
-                        <Button info style={{padding: '10px 15px',}} sm>Help</Button>
-                    </Actions>
+                    <Wrap>
+                        <Actions>
+                            <Button  style={{padding: '10px 15px',}} sm>Report</Button>
+                            <Button info style={{padding: '10px 15px',}} sm>Help</Button>
+                        </Actions>
+
+                        <NumOfReq>
+                            <Badge style={{background: 'transparent', fontSize: '12px', fontWeight: '400', color: 'var(--secondery-text-color)', transition: 'var(--main-transition) !important',}} sm>5 minutes ago</Badge>
+                        </NumOfReq>
+                    </Wrap>
+                    
                 </RequestDetails>
             </BloodRequestBox>
         </>

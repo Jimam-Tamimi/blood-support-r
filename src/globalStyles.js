@@ -240,10 +240,38 @@ export const Button = styled.button`
         }
         
       `:''
-    )}
-    
-    
+    )}    
 `
+
+
+export const Badge = styled.span`
+    background: var(--primary-color);
+
+    border-radius: 7px;
+    padding: 4px 6px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .8px;
+    color: white ;
+    transition: var(--main-transition) !important;
+    ${({info}) => (
+      info?
+      `
+        background: var(--info-color);       
+      `:''
+    )}  
+    ${({sm}) => (
+      sm?
+      `
+        border-radius: 4px;
+        padding: 3px 4px;
+        font-size: 12px;
+        font-weight: 600;      
+      `:''
+    )}  
+
+`
+
 
 // custom styling for React Select Component
 export const customStyles = {
