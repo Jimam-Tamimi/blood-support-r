@@ -36,9 +36,7 @@ export default function MakeRequest() {
     navigator.geolocation.getCurrentPosition((location) => {
       setCoords({lat: location.coords.latitude, lng: location.coords.longitude})
       setMark({lat: location.coords.latitude, lng: location.coords.longitude})
-      console.log(mark)
-      console.log(coords)
-    }, () => console.log('error :)'), {timeout:4000})
+    }, () => console.log('error :)'), {timeout:10000})
   }
   useEffect(() => {
     setCurrentLocation()
@@ -46,16 +44,20 @@ export default function MakeRequest() {
  
 
   const onPlaceChanged = () => {
-    const lat = autoComplete.getPlace().geometry.location.lat();
-    const lng = autoComplete.getPlace().geometry.location.lng();
-    setMark({lat, lng})
-    setCoords({lat, lng})
+    try{
+      const lat = autoComplete.getPlace().geometry.location.lat();
+      const lng = autoComplete.getPlace().geometry.location.lng();
+      setMark({lat, lng})
+      setCoords({lat, lng})
+    } catch{
+      
+    }
   } 
   
   return (
     <>
       <FormWrap>
-        <Form onSubmit={e => e.preventDefault()}>
+        <Form onSubmit={e => {  e.preventDefault()}}>
           <InputDiv size={4}>
             <Label htmlFor="name">Name</Label>
             <Input id="name" placeholder="Name" type="text" />
@@ -101,7 +103,7 @@ export default function MakeRequest() {
 
           <InputDiv flex  style={{justifyContent: 'space-between'}} size={12}>
 
-            <Button    info blockOnSmall style={{position: "relative", top: "14px"}} onClick={e => {e.preventDefault(); console.log('clicked');  setCurrentLocation()}}  >Current Location</Button>
+            <Button  type="button"   info blockOnSmall style={{position: "relative", top: "14px"}} onClick={e => {   setCurrentLocation()} }  >Current Location</Button>
 
             <Autocomplete onLoad={autoC => setAutoComplete(autoC)} onPlaceChanged={onPlaceChanged}>
               <>
@@ -109,8 +111,8 @@ export default function MakeRequest() {
               <Input
                 id="places"
                 placeholder="Search Places..."
-                type="tel"
-                onSubmit={e => e.preventDefault()}
+                type="text"
+                onKeyDown={e => {if(e.keyCode===13){e.preventDefault()}else{return true}}}
               /> 
               </>
             </Autocomplete>
@@ -120,7 +122,7 @@ export default function MakeRequest() {
             <Map 
               coords={coords}  
               isMarkerShown
-              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCTLGaTW3tW7Ky_cB1X05UZ7pbfrSalTcg"
+              googleMapURL=" "
               loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div style={{ height: `100%` }} />}
               mapElement={<div style={{ height: `100%` }} />}
