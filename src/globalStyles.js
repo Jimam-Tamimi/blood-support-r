@@ -169,7 +169,10 @@ export const InputDiv = styled.div`
       width: 100%;
     }
   }
+  ${({left}) => left?`margin-left: auto;`:''}
+  ${({height}) => height?`height: ${height};`:''}
 
+  ${({flex}) => flex?`${Flex}`:''}
 
 `
 
@@ -186,12 +189,14 @@ export const Input = styled.input`
     height: 48px;
     margin: 10px 0px;
 
+
 `
 
 export const Label = styled.label`
     font-size: 18px;
     border: none;
     color: var(--secendory-text-color);
+    font-weight: 600;
 `
 
 export const Button = styled.button`
@@ -287,14 +292,17 @@ export const customStyles = {
       margin: '10px 0px',
       background: 'var(--secendory-color)',
       border: 'none',
+      position: 'relative'
   }),
   container: () => ({
       width: '100%',
       height: '100%',
+      position: 'relative',
   }),
-  menu: (provided) => ({
-      // ...provided,
-  }),
+  menu: (provided) => {console.log(provided); return ({
+      ...provided,
+      
+  })},
   singleValue: (provided, state) => ({
       ...provided,
       color: 'var(--secendory-text-color)',

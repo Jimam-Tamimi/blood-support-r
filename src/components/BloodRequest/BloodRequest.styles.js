@@ -12,7 +12,6 @@ export const BloodRequestBox = styled.div`
     justify-content: space-between;
     background: var(--secendory-color);
     box-shadow: 0px 0px 15px 2px var(--main-box-shadow-color);
-
 `
 
 export const RequestAddress = styled.div`
