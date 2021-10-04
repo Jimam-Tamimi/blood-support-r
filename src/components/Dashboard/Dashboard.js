@@ -41,6 +41,7 @@ export default function Dashboard({show, toggleDashOnSmallDevice}) {
         {to:"/settings/", name: 'Settings', icon:FiSettings},
     ]
 
+
     
   return (
     <>

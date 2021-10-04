@@ -128,6 +128,8 @@ export default function MakeRequest() {
               mapElement={<div style={{ height: `100%` }} />}
               setCoords={setCoords}
               setMark={setMark}
+              click={e => setMark({lat: e.latLng.lat(), lng: e.latLng.lng()})}
+              defaultZoom={17}
             >
               {
                 mark?<Marker  

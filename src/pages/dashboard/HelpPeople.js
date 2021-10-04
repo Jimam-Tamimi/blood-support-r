@@ -26,6 +26,12 @@ export default function HelpPeople() {
 const Wrap = styled.div`
     ${Flex}
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    
+    /* @media only screen and (max-width: 1254px){
+      &{
+          justify-content: center;
+      }
+    } */
 `

@@ -11,12 +11,14 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Source Sans Pro', sans-serif;
     transition: var(--main-transition) !important ;
+
   }
   
   :root {
 
     
     --for-active-click: scale(.92);
+    --hover: scale(1.08);
     --main-transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --primary-color: #dc3545;
     --primary-text-color: white ;
@@ -198,6 +200,30 @@ export const Label = styled.label`
     color: var(--secendory-text-color);
     font-weight: 600;
 `
+
+export const IconDiv = styled.div`
+    background: ${({background}) => background? background: " var(--secendory-color)"}; 
+    margin: 0px 5px;
+    border-radius: 60%;
+    font-size: ${({fontSize}) => fontSize? fontSize: "22px"};
+    cursor: pointer;
+    width: ${({width}) => width? width: "45px"};
+    height: ${({height}) => height? height: "45px"};
+    color: var(--secendory-text-color);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover{
+      background: ${({hover}) => hover? hover: "var(--secendory-hover-color)"}  ;
+      ${({scaleOnHover}) => scaleOnHover?`
+          transform: var(--hover);
+          `:''}
+      }
+    
+    &:active{
+        transform: var(--for-active-click);
+    }`
 
 export const Button = styled.button`
     padding: 12px 20px;
