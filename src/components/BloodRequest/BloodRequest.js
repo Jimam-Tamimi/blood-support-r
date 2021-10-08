@@ -9,10 +9,7 @@ import {
     Wrap,
     Actions,
     NumOfReq,
-    DropdownMenu, 
-    DropdownLink, 
-    LinkIcon, 
-    LinkText,
+
     
 } from './BloodRequest.styles'
 import {BsThreeDotsVertical} from 'react-icons/bs'
@@ -20,16 +17,15 @@ import {FaBan} from 'react-icons/fa'
 import Map from '../Map/Map'
 import { Button, Badge, IconDiv } from '../../globalStyles'
 import {Marker} from 'react-google-maps'
-import Dropdown from '../Dropdown/Dropdown'
+import ReqDropdown from '../ReqDropdown/ReqDropdown'
 
-export default function BloodRequest() {
+export default function BloodRequest({setShowRequestDetails, setRequestId}) {
     const [details, setDetails] = useState({ 
         'Time': '02/1/2006',
         'Blood Group': 'A+',
         'Description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima qui minus assumenda, accusantium quidem maiores sapiente ipsum. Eligendi illo dolore '
     })
     const dropDown = useRef(null)
-    const [showDropdown, setShowDropdown] = useState(false)
     const [cords, setCords] = useState({lat:24.0077202, lng:89.2429551})
     
     return (
@@ -44,7 +40,7 @@ export default function BloodRequest() {
                         loadingElement={<div style={{ height: `100%`, width: '100%' }} />}
                         containerElement={<div style={{ height: `100%`, width: '100%' }} />}
                         mapElement={<div style={{ height: `100%`, width: '100%' }} />} 
-                        defaultZoom={14}
+                        defaultZoom={15}
                     >
                         {
                             <Marker  
@@ -55,7 +51,8 @@ export default function BloodRequest() {
                 </RequestAddress>
                 <RequestDetails> 
                     <NumOfReq style={{width: "100%"}}>
-                        <IconDiv onClick={e => setShowDropdown(!showDropdown)} style={{margin: "unset", position: "absolute", top: "-4px", right: "-16px"}} scaleOnHover  width="30px" fontSize="20px" height="30px">
+                        <ReqDropdown absolute />
+                        {/* <IconDiv onClick={e => setShowDropdown(!showDropdown)} style={{margin: "unset", position: "absolute", top: "-4px", right: "-16px"}} scaleOnHover  width="30px" fontSize="20px" height="30px">
                             <BsThreeDotsVertical/>
                         </IconDiv>
                         <DropdownMenu onClick={e => showDropdown?setShowDropdown(false): ''}  showDropdown={showDropdown} >
@@ -75,7 +72,7 @@ export default function BloodRequest() {
                                     Save
                                 </LinkText>
                             </DropdownLink>
-                        </DropdownMenu>
+                        </DropdownMenu> */}
                     </NumOfReq> 
 
                     {
@@ -87,7 +84,7 @@ export default function BloodRequest() {
                     }
                     <Wrap>
                         <Actions>
-                            <Button info style={{padding: '10px 15px', margin: "0"}} sm>Help</Button>
+                            <Button onClick={e => setShowRequestDetails(true)} info style={{padding: '10px 15px', margin: "0"}} sm>Help</Button>
                         </Actions>
 
                         <NumOfReq>

@@ -1,35 +1,38 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom"
-export const DashboardWraper = styled.div`
-    width: 255px;
-    min-height: 100vh;
+import {Flex} from '../../globalStyles'
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    background-color: var(--object-bg-color);
-    overflow-y: scroll;
-    height: 100vh;
-    transition: var(--main-transition);
 
-    transform: translateX(${({show}) => show? '0': '-100%'});
-
-    position: fixed;
-    z-index: 100000;
-
+export const Wrap = styled.div`
     
 `
 
 
+export const DropdownMenu = styled.div`
+    width: 120px;
+    padding: 3px 0px;
+    position: absolute;
+    background: var(--secendory-color);
+    top: 8px;
+    right: 15px;
+    ${({showDropdown}) => showDropdown?` 
+        opacity: 1;
+        transform: translateX(-10px);
+        z-index: 10;
+        `:` 
+        opacity: 0;
+        transform: translateX(0px);
+        z-index: -20;
+    `}
+   
+`
 
-export const DashLink = styled(NavLink)`
-    /* border: 2px solid red; */
-    width: 95%;
-    height: 50px;
-    min-height: 50px;
-    margin: 5px 0px;
-    padding: 0px 20px;
+ 
+export const DropdownLink = styled.div`
+    width: 100%;
+    height: 35px;
+    margin: 3px auto;
+
+    padding: 0px 14px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +41,7 @@ export const DashLink = styled(NavLink)`
     transition: var(--main-transition);
     position: relative;
     z-index: 1;
+    cursor: pointer;
 
 
 
@@ -73,61 +77,29 @@ export const DashLink = styled(NavLink)`
         background: var(--primary-hover-color);
         transform: scaleX(1);
     }
-
+   
 `
-
-export const DashboardLogo = styled(DashLink)`
-    height: 70px;
-    background: var(--object-bg-color) !important;
-    color: var(--secendory-text-color);
-    justify-content: space-between;
-    padding: 0px 10px;
-    &::after{
-        content: none;
-    }
-    &.active{
-        color: var(--secendory-text-color) ;
-        background: var(--object-bg-color) !important;
-    }
-
-
-`
-
-export const Logo = styled.img`
-    width: 25%;
-    border-radius: 60%;
-
-`
-
-export const LogoText = styled.p`
-    /* right: 30px; */
-    font-size: 22px;
-`
-
-
-
-
-
+ 
+ 
 export const LinkIcon = styled.div`
-    width: 18%;
-    font-size: 24px;
+    width: 30%;
+    font-size: 15px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     z-index: 100;
-    color: inherit;
+    color: var(--primary-color);
 
 `
-
+ 
 export const LinkText = styled.div`
     width: 82%;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 500;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     z-index: 100;
     color: inherit;
-
-
 `
+ 

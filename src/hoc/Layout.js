@@ -58,8 +58,8 @@ export default function Layout({children}) {
                 <Dashboard  toggleDashOnSmallDevice={toggleDashOnSmallDevice} show={show} />
 
                 <Container onClick={() => smallDevice && show?setShow(false):null}  smallDevice={smallDevice} show={show}>
-                    <Navbar  setDarkMode={setDarkMode} darkMode={darkMode} toggleDash={toggleDash} />
-                    <Content>
+                    <Navbar show={show}  setDarkMode={setDarkMode} darkMode={darkMode} toggleDash={toggleDash} />
+                    <Content >
                         {children}
                     </Content>
                 </Container>

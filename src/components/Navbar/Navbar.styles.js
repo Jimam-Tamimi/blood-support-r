@@ -10,13 +10,11 @@ export const NavbarWraper = styled.header`
     align-items: center;
     height: 80px;
     box-shadow: 0px 1px 7px 0px var(--main-box-shadow-color);
-    background: var(--main-bg-color);
-
+    background: var(--main-bg-color); 
 `
 
 export const NavSearchForm = styled.form`
     margin-right: auto;
-
 `
 
 export const SearchInp = styled.input`

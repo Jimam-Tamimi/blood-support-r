@@ -40,7 +40,7 @@ import { addMessage } from '../../redux'
 
 
 
-export default function Navbar({toggleDash, setDarkMode, darkMode}) {
+export default function Navbar({toggleDash, setDarkMode, darkMode, show}) {
 
     // redux
     const dispatch = useDispatch()
@@ -65,8 +65,6 @@ export default function Navbar({toggleDash, setDarkMode, darkMode}) {
             dispatch(addMessage(id))
         }
     }
-    
-
     useEffect(() => {
         const toggleOpen = e => {
             if(!notRef.current.contains(e.target) && notification){
@@ -85,7 +83,7 @@ export default function Navbar({toggleDash, setDarkMode, darkMode}) {
     
     return (
         <>
-            <NavbarWraper>
+            <NavbarWraper show={show}>
                 <HambBurgerWrap onClick={toggleDash}>
                     <HambBurgerLine />
                     <HambBurgerLine />
