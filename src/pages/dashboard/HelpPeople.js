@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import BloodRequest from '../../components/BloodRequest/BloodRequest'
 import RequestDetails from '../../components/RequestDetails/RequestDetails'
+import OffCanvas from '../../components/OffCanvas/OffCanvas'
 import styled from 'styled-components'
+import {Badge, Button, ButtonLink} from '../../globalStyles'
 
 import {Flex} from '../../globalStyles'
 
@@ -10,7 +12,11 @@ export default function HelpPeople() {
     const [requestId, setRequestId] = useState(null)
     return (
         <>
-            <RequestDetails showRequestDetails={showRequestDetails} setShowRequestDetails={setShowRequestDetails} requestId={requestId}  setRequestId={setRequestId} />
+        <OffCanvas   setShow={setShowRequestDetails}  show={showRequestDetails}>
+            <RequestDetails>
+                <ButtonLink to="/requests/45/"  style={{padding: '10px 15px', margin: "0"}} >View</ButtonLink>
+            </RequestDetails>
+        </OffCanvas>
             <Wrap>
                 <BloodRequest setShowRequestDetails={setShowRequestDetails} setRequestId={setRequestId} />
                 <BloodRequest setShowRequestDetails={setShowRequestDetails} setRequestId={setRequestId} />
@@ -38,4 +44,10 @@ const Wrap = styled.div`
           justify-content: center;
       }
     } */
+`
+
+
+
+const ButtonDiv = styled.div`
+    margin-top: 30px;
 `

@@ -15,7 +15,7 @@ import {
 import {BsThreeDotsVertical} from 'react-icons/bs'
 import {FaBan} from 'react-icons/fa'
 import Map from '../Map/Map'
-import { Button, Badge, IconDiv } from '../../globalStyles'
+import { Button, Badge, IconDiv, ButtonLink } from '../../globalStyles'
 import {Marker} from 'react-google-maps'
 import ReqDropdown from '../ReqDropdown/ReqDropdown'
 
@@ -84,7 +84,8 @@ export default function BloodRequest({setShowRequestDetails, setRequestId}) {
                     }
                     <Wrap>
                         <Actions>
-                            <Button onClick={e => setShowRequestDetails(true)} info style={{padding: '10px 15px', margin: "0"}} sm>Help</Button>
+                            <Button onClick={e => setShowRequestDetails(true)} info style={{padding: '10px 15px', margin: "0"}} sm>See More</Button>
+                            <ButtonLink to="/requests/45/"   success style={{padding: '10px 15px', marginLeft: "10px"}} sm>View</ButtonLink>
                         </Actions>
 
                         <NumOfReq>

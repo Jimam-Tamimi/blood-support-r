@@ -7,6 +7,7 @@ import GuestRoute from "./hoc/GuestRoute"
 
 import Home from "./pages/dashboard/Home";
 import MakeRequest from "./pages/dashboard/MakeRequest";
+import Request from "./pages/dashboard/Request";
 
 
 import Login from "./pages/account/Login";
@@ -25,6 +26,7 @@ function App() {
           <Route path='/dashboard/' component={Home} />
           <Route path='/make-request/' component={MakeRequest} />
           <Route path='/help-people/' component={HelpPeople} />
+          <Route path='/requests/:id/' component={Request} />
         </PrivateRoute>
         <GuestRoute>
           <Route path='/login/' component={Login} />

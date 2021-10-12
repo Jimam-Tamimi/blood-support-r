@@ -11,6 +11,9 @@ export const NavbarWraper = styled.header`
     height: 80px;
     box-shadow: 0px 1px 7px 0px var(--main-box-shadow-color);
     background: var(--main-bg-color); 
+    position: sticky;
+    top: 0;
+    z-index: 10;
 `
 
 export const NavSearchForm = styled.form`

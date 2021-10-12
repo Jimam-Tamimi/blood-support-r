@@ -53,12 +53,7 @@ export default function ReqDropdown({  absolute }) {
           </LinkIcon>
           <LinkText>Save</LinkText>
         </DropdownLink>
-        <DropdownLink>
-          <LinkIcon>
-            <IoMdOpen />
-          </LinkIcon>
-          <LinkText>Open</LinkText>
-        </DropdownLink>
+       
         <DropdownLink>
           <LinkIcon>
             <FaRegCopy />

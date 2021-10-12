@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle, css } from 'styled-components'
+import {Link} from 'react-router-dom' 
 
 export const DARK_MODE_SECENDORY_COLOR = 'white'
 export const LIGHT_MODE_SECENDORY_COLOR = 'BLACK'
@@ -19,7 +20,8 @@ const GlobalStyle = createGlobalStyle`
     
     --for-active-click: scale(.92);
     --hover: scale(1.08);
-    --main-transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --main-transition: all .45s ease;
+    /* --main-transition: all .45s cubic-bezier(0.25, 0.46, 0.45, 0.94); */
     --primary-color: #dc3545;
     --primary-text-color: white ;
     --primary-hover-color: #b52a37;
@@ -126,7 +128,8 @@ export const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  background: var(--main-bg-color);
+
   
 
   margin-left: ${({show, smallDevice}) => show && !smallDevice? '255px': '0px'};
@@ -242,6 +245,12 @@ export const Button = styled.button`
         font-size: 13.33px;
       `:''
     )}
+    ${({md}) => (
+      md? `
+      padding: 11px 17px;
+        font-size: 14px;
+      `:''
+    )}
     ${({blockOnSmall}) => (
       blockOnSmall? `
         @media only screen and (max-width: 748px) {
@@ -272,6 +281,69 @@ export const Button = styled.button`
         
       `:''
     )}    
+
+
+    ${({grey}) => (
+      grey?
+      `
+        background: #6b6c75;
+        &:hover{
+          background: #5c5d60;
+        }
+        
+      `:''
+    )}    
+`
+
+
+export const ButtonLink = styled(Link)`
+    padding: 12px 20px;
+    font-size: 16px;
+
+    color: var(--primary-text-color);
+
+    border: none;
+    border-radius: 4px;
+    margin: 0px 5px ;
+    cursor: pointer;
+    transition: var(--main-transition);
+    ${({sm}) => (
+      sm? `
+        padding: 9px 7px;
+        font-size: 13.33px;
+      `:''
+    )}
+    ${({blockOnSmall}) => (
+      blockOnSmall? `
+        @media only screen and (max-width: 748px) {
+          &{
+            width: 100%;
+          }
+        }
+      `:''
+    )}
+
+  background: var(--primary-color);
+    &:hover{
+        background: var(--primary-hover-color);
+    }
+
+    &:active{
+        transform: var(--for-active-click);
+    }
+
+
+    ${({info}) => (
+      info?
+      `
+        background: var(--info-color);
+        &:hover{
+          background: var(--info-hover-color);
+        }
+        
+      `:''
+    )}  
+
 `
 
 

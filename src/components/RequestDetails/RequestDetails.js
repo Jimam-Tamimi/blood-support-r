@@ -1,7 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useState} from 'react'
 import {
-    RequestDetailsContainer,
-    RequestDetailsWrap,
     RequestDetailsMap,
     RequestAllDetailsRow,
     DetailsDiv,
@@ -16,9 +14,10 @@ import {
     Profile,
 } from './RequestDetails.styles'
 
-import prof from '../../assets/img/prof.jpg'
-import {Badge, Button} from '../../globalStyles'
 
+import prof from '../../assets/img/prof.jpg'
+import {Badge, Button, ButtonLink} from '../../globalStyles'
+import Modal from '../Modal/Modal'
 
 import Map from '../Map/Map'
 import ReqDropdown from '../ReqDropdown/ReqDropdown'
@@ -26,25 +25,10 @@ import {Marker} from 'react-google-maps'
 
 
 
+export default function RequestDetails({children}) {
 
-export default function RequestDetails({showRequestDetails, setShowRequestDetails, requestId, setRequestId }) { 
-    const reqDetailWrap = useRef(null)
-    const listener = e => {
-        if (reqDetailWrap && !reqDetailWrap?.current?.contains(e.target)) {
-            setShowRequestDetails(false)
-            setRequestId(null)
-        }
-    }
 
-    useEffect(() => {
-        if(showRequestDetails){
-            window.addEventListener("click", listener)
-            return () => {
-                window.removeEventListener("click", listener)
-            }
-        }  
-    }, [showRequestDetails ])
- 
+     
     const [details, setDetails] = useState({ 
         name: 'Jimam Tamimi',
         time: '02/1/2006',
@@ -59,18 +43,17 @@ export default function RequestDetails({showRequestDetails, setShowRequestDetail
     
     const [cords, setCords] = useState({lat:24.0077202, lng:89.2429551})
     
-
+    
+    
     return (
         <>
-            <RequestDetailsWrap showRequestDetails={showRequestDetails}>
-                <RequestDetailsContainer ref={reqDetailWrap} showRequestDetails={showRequestDetails}>
                     <RequestDetailsMap>
                         <Map 
                             coords={details.coords}  
                             isMarkerShown
                             googleMapURL=" "
                             loadingElement={<div style={{ height: `100%`, width: '100%' }} />}
-                            containerElement={<div style={{ height: `100%`, width: '100%' }} />}
+                            containerElement={<div style={{ height: `350px`, width: '100%' }} />}
                             mapElement={<div style={{ height: `100%`, width: '100%' }} />} 
                             defaultZoom={14}
                         >
@@ -119,8 +102,7 @@ export default function RequestDetails({showRequestDetails, setShowRequestDetail
                                 <DetailFieldValue>{details.description}</DetailFieldValue>
                             </Detail>
                             <ButtonDiv>
-                                <Button  info style={{padding: '10px 15px', margin: "0"}} >Send Request</Button>
-                                
+                                {children}
                             </ButtonDiv>
 
                         </DetailsDiv>
@@ -134,8 +116,9 @@ export default function RequestDetails({showRequestDetails, setShowRequestDetail
                             </Action>
                         </ActionDiv>
                     </RequestAllDetailsRow>
-                </RequestDetailsContainer>
-            </RequestDetailsWrap>
         </>
     )
 }
+
+
+

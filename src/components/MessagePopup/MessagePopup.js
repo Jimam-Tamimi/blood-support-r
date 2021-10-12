@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import prof from '../../assets/img/prof.jpg'
-
-import Animated from "react-mount-animation";
-
+ 
 
 import { removeMessage } from '../../redux/messagePop/actions'
 import Message from './Message'

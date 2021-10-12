@@ -16,7 +16,9 @@ export const DashboardWraper = styled.div`
     transform: translateX(${({show}) => show? '0': '-100%'});
 
     position: fixed;
-    z-index: 100000;
+    z-index: 15;
+    top: 0;
+    left: 0;
 
     
 `
