@@ -12,12 +12,16 @@ export const ModalWrap = styled.div`
     background: #00000073;    
     ${({show}) => show? `z-index: 102; opacity: 1;`: `z-index: -10; opacity: 0;`}
     ${Flex}
+    align-items: baseline;
+    overflow-Y: scroll;
 `
 export const ModalContainer = styled.div`
     width: 35%;
     ${({sm}) => sm?`width: 35%;`:''}
     ${({md}) => md?`width: 65%;`:''}
     ${({lg}) => lg?`width: 85%;`:''}
+
+    
     transform: ${({show, slideBottom, slideTop, slideLeft, slideRight, fade, scale}) => ( 
         !show?`
         ${slideBottom? `translateY(-100vh)`: slideTop? `translateY(100vh)`: slideLeft? `translateX(100vh)`: slideRight? `translateX(-100vh)`: scale? `scale(0)`: `none`}`:`none` 
@@ -26,7 +30,7 @@ export const ModalContainer = styled.div`
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0px 0px 20px 2px var(--main-box-shadow-color);
-
+    margin: 35px 0px;
 `
 export const ModalHead = styled.div`
     width: 100%;
@@ -67,6 +71,8 @@ export const ModalBody = styled.div`
     width: 100%;
     min-height: 200px;
     background: var(--secendory-color);
+    ${Flex}
+    padding: 20px;
 `
 export const ModalFooter = styled.div`
 width: 100%;

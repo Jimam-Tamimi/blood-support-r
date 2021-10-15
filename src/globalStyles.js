@@ -38,8 +38,8 @@ const GlobalStyle = createGlobalStyle`
           --secendory-hover-color: #272c31;
           
           --main-bg-color: #212427;
-          
-          --input-bg-color: #2f343a;
+           
+          --input-bg-color: #262b31;
 
           --object-bg-color: #343a40;
 

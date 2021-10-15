@@ -111,8 +111,9 @@ export const NavMessageCont = styled.div`
     overflow-y: scroll;
     transition: var(--main-transition);
     z-index: ${({message}) => message? '100': '-100'};
-    transform: translateX(${({message}) => message? '0': '10px'});
+    transform: scale(${({message}) => message? '1': '0'});
     opacity: ${({message}) => message? '1': '0'};
+    
 `
 
 export const Message = styled(DashLink)`
@@ -166,12 +167,9 @@ export const ProfImg = styled.img`
 `
 
 export const NavNotificationCont = styled(NavMessageCont)`
-
-z-index: ${({notification}) => notification? '100': '-100'};
-    transform: translateX(${({notification}) => notification? '0': '10px'});
+    z-index: ${({notification}) => notification? '100': '-100'};
+    transform: scale(${({notification}) => notification? '1': '0'});
     opacity: ${({notification}) => notification? '1': '0'};
-
-
 `
 export const NotImg = styled(ProfImg)``
 export const NotMsg = styled(Msg)`

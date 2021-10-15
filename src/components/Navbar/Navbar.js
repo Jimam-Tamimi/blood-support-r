@@ -37,6 +37,7 @@ import {
 import { NavNotificationCont } from './Navbar.styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { addMessage } from '../../redux'
+import { CSSTransition } from 'react-transition-group'
 
 
 
@@ -111,52 +112,54 @@ export default function Navbar({toggleDash, setDarkMode, darkMode, show}) {
                         <NavMessage onClick={() => {setMessage(!message); setNotification(false)}} >
                             <BiMessageRoundedDots />
                         </NavMessage>
+
                         <NavMessageCont ref={msgRef} message={message}>
-                            <DropDownHeading>All Messages</DropDownHeading>
-                            <Message onClick={(e) => handleNavMsgClick(e, 1)} to="/msg/rnghef">
-                                <ProfImg src={prof} />
-                                <MsgInfo>
-                                    <Name>Jimam Tamimi 1</Name>
-                                    <Msg>Jimam Is A Very Good Boy</Msg>
-                                </MsgInfo>
-                            </Message>
-                            <Message onClick={(e) => handleNavMsgClick(e, 2)} to="/msg/rnghef">
-                                <ProfImg src={prof} />
-                                <MsgInfo>
-                                    <Name>Jimam Tamimi 2</Name>
-                                    <Msg>Jimam Is A Very Good Boy</Msg>
-                                </MsgInfo>
-                            </Message>
-                            <Message onClick={(e) => handleNavMsgClick(e, 3)} to="/msg/rnghef">
-                                <ProfImg src={prof} />
-                                <MsgInfo>
-                                    <Name>Jimam Tamimi 3</Name>
-                                    <Msg>Jimam Is A Very Good Boy</Msg>
-                                </MsgInfo>
-                            </Message>
-                            <Message onClick={(e) => handleNavMsgClick(e, 4)} to="/msg/rnghef">
-                                <ProfImg src={prof} />
-                                <MsgInfo>
-                                    <Name>Jimam Tamimi 4</Name>
-                                    <Msg>Jimam Is A Very Good Boy</Msg>
-                                </MsgInfo>
-                            </Message>
-                            <Message onClick={(e) => handleNavMsgClick(e, 5)} to="/msg/rnghef">
-                                <ProfImg src={prof} />
-                                <MsgInfo>
-                                    <Name>Jimam Tamimi 5</Name>
-                                    <Msg>Jimam Is A Very Good Boy</Msg>
-                                </MsgInfo>
-                            </Message>
-                            <Message onClick={(e) => handleNavMsgClick(e, 6)} to="/msg/rnghef">
-                                <ProfImg src={prof} />
-                                <MsgInfo>
-                                    <Name>Jimam Tamimi 6</Name>
-                                    <Msg>Jimam Is A Very Good Boy</Msg>
-                                </MsgInfo>
-                            </Message>
-                            
-                        </NavMessageCont>
+                                <DropDownHeading>All Messages</DropDownHeading>
+                                <Message onClick={(e) => handleNavMsgClick(e, 1)} to="/msg/rnghef">
+                                    <ProfImg src={prof} />
+                                    <MsgInfo>
+                                        <Name>Jimam Tamimi 1</Name>
+                                        <Msg>Jimam Is A Very Good Boy</Msg>
+                                    </MsgInfo>
+                                </Message>
+                                <Message onClick={(e) => handleNavMsgClick(e, 2)} to="/msg/rnghef">
+                                    <ProfImg src={prof} />
+                                    <MsgInfo>
+                                        <Name>Jimam Tamimi 2</Name>
+                                        <Msg>Jimam Is A Very Good Boy</Msg>
+                                    </MsgInfo>
+                                </Message>
+                                <Message onClick={(e) => handleNavMsgClick(e, 3)} to="/msg/rnghef">
+                                    <ProfImg src={prof} />
+                                    <MsgInfo>
+                                        <Name>Jimam Tamimi 3</Name>
+                                        <Msg>Jimam Is A Very Good Boy</Msg>
+                                    </MsgInfo>
+                                </Message>
+                                <Message onClick={(e) => handleNavMsgClick(e, 4)} to="/msg/rnghef">
+                                    <ProfImg src={prof} />
+                                    <MsgInfo>
+                                        <Name>Jimam Tamimi 4</Name>
+                                        <Msg>Jimam Is A Very Good Boy</Msg>
+                                    </MsgInfo>
+                                </Message>
+                                <Message onClick={(e) => handleNavMsgClick(e, 5)} to="/msg/rnghef">
+                                    <ProfImg src={prof} />
+                                    <MsgInfo>
+                                        <Name>Jimam Tamimi 5</Name>
+                                        <Msg>Jimam Is A Very Good Boy</Msg>
+                                    </MsgInfo>
+                                </Message>
+                                <Message onClick={(e) => handleNavMsgClick(e, 6)} to="/msg/rnghef">
+                                    <ProfImg src={prof} />
+                                    <MsgInfo>
+                                        <Name>Jimam Tamimi 6</Name>
+                                        <Msg>Jimam Is A Very Good Boy</Msg>
+                                    </MsgInfo>
+                                </Message>
+                                
+                        </NavMessageCont> 
+                        
                     </NavMessageWrap>
                     <NavNotificationWrap  >
                         <NavNotification   onClick={() => {setNotification(!notification); setMessage(false)}}>

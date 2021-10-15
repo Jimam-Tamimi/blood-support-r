@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {
   FormWrap,
   Form,
@@ -10,10 +10,9 @@ import {
 } from "../../globalStyles";
 
 import {Autocomplete} from '@react-google-maps/api'
-import {GoogleMap, withScriptjs, withGoogleMap,   Marker, InfoWindow } from "react-google-maps";
+import {Marker} from "react-google-maps";
 import Select from "react-select";
-import Map from "../../components/Map/Map";
-import { useEffect } from "react";
+import Map from "../../components/Map/Map"; 
 
 export default function MakeRequest() {
   const bloodGroups = [
