@@ -6,18 +6,22 @@ import {
     ActionDiv,
     Action,
     ButtonDiv,
-    Detail,
-    DetailHeader,
-    DetailField,
+    
     ProfileImg,
-    DetailFieldValue,
     Profile,
 } from './RequestDetails.styles'
 
 
 import prof from '../../assets/img/prof.jpg'
-import {Badge, Button, ButtonLink} from '../../globalStyles'
-import Modal from '../Modal/Modal'
+import {
+    Badge, 
+    Button, 
+    ButtonLink,
+    Detail,
+    DetailHeader,
+    DetailFieldValue,
+    DetailField,
+} from '../../globalStyles'
 
 import Map from '../Map/Map'
 import ReqDropdown from '../ReqDropdown/ReqDropdown'
@@ -27,8 +31,6 @@ import {Marker} from 'react-google-maps'
 
 export default function RequestDetails({children}) {
 
-
-     
     const [details, setDetails] = useState({ 
         name: 'Jimam Tamimi',
         time: '02/1/2006',
@@ -44,7 +46,6 @@ export default function RequestDetails({children}) {
     const [cords, setCords] = useState({lat:24.0077202, lng:89.2429551})
     
     
-    
     return (
         <>
                     <RequestDetailsMap>
@@ -52,9 +53,9 @@ export default function RequestDetails({children}) {
                             coords={details.coords}  
                             isMarkerShown
                             googleMapURL=" "
-                            loadingElement={<div style={{ height: `100%`, width: '100%' }} />}
+                            loadingElement={<div style={{ height: `350px`, width: '100%' }} />}
                             containerElement={<div style={{ height: `350px`, width: '100%' }} />}
-                            mapElement={<div style={{ height: `100%`, width: '100%' }} />} 
+                            mapElement={<div style={{ height: `350px`, width: '100%' }} />} 
                             defaultZoom={14}
                         >
                             {

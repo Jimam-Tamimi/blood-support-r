@@ -23,7 +23,6 @@ export const RequestAllDetailsRow = styled.div`
             padding: 10px; 
         }
     }
-    
 
 `
 export const DetailsDiv = styled.div`
@@ -42,12 +41,6 @@ export const Action = styled.div`
     margin: 10px 0px;
 `
 
-export const Detail = styled.div`
-    ${Flex}
-    justify-content: space-between;
-    margin: 5px 0px;
-    margin-left: 10px; 
-`
 
 export const Profile = styled(Link)`
     ${Flex}
@@ -56,25 +49,6 @@ export const Profile = styled(Link)`
     margin-left: 10px; 
 `
 
-export const DetailHeader = styled.h4`
-    font-size: 21px;
-    margin: 10px 0px;
-    color: var(--secendory-text-color);
-
-    text-decoration: underline;
-`
-
-export const DetailField = styled.p`
-    margin-right: 8px;
-    color: var(--secendory-text-color);
-
-
-`
-
-export const DetailFieldValue = styled.p`
-    font-weight: 600;
-    color: var(--secendory-text-color);
-`
 
 export const ProfileImg = styled.img`
     width: 40px;

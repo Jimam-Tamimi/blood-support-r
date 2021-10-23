@@ -7,11 +7,12 @@ import {
 
 
 
-export default function RequestDetails({show, setShow, children }) { 
+export default function OffCanvas({show, setShow, children, onCanvasExit }) { 
     const refCont = useRef(null)
     const listener = e => {
         if (refCont && !refCont?.current?.contains(e.target)) {
             setShow(false) 
+            onCanvasExit()
         }
     }
 

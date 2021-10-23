@@ -57,7 +57,7 @@ export default function Dashboard({show, toggleDashOnSmallDevice}) {
                 dashLinks.map((link, i) => {
                     return (
                         <>
-                        <DashLink  key={i} onClick={() => toggleDashOnSmallDevice()} activeClassName="active"  to={link.to} exact>
+                        <DashLink  key={i} on Click={() => toggleDashOnSmallDevice()} activeClassName="active"  to={link.to} exact>
                             <LinkIcon>
                                 <link.icon/>
                             </LinkIcon>

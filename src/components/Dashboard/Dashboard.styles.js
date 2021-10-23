@@ -24,7 +24,6 @@ export const DashboardWraper = styled.div`
 `
 
 
-
 export const DashLink = styled(NavLink)`
     /* border: 2px solid red; */
     width: 95%;
