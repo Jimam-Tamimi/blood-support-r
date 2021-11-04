@@ -1,7 +1,5 @@
 import styled, {css} from "styled-components";
-import {Flex} from '../../globalStyles'
-import Dropdown from "../ReqDropdown/ReqDropdown";
-
+import {Flex} from '../../globalStyles' 
 
 export const BloodRequestBox = styled.div`
     width: 460px;

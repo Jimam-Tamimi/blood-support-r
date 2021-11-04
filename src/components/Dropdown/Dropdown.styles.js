@@ -3,7 +3,8 @@ import {Flex} from '../../globalStyles'
 
 
 export const Wrap = styled.div`
-    
+        position: relative;
+
 `
 
 
@@ -12,8 +13,8 @@ export const DropdownMenu = styled.div`
     padding: 3px 0px;
     position: absolute;
     background: var(--secendory-color);
-    top: 8px;
-    right: 15px;
+    top: 14px;
+    right: 26px;
     ${({showDropdown}) => showDropdown?` 
         opacity: 1;
         transform: translateX(-10px);

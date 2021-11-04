@@ -7,7 +7,7 @@ import {
 
 
 
-export default function OffCanvas({show, setShow, children, onCanvasExit }) { 
+export default function OffCanvas({show, setShow, children, padding, onCanvasExit=()=>{} }) { 
     const refCont = useRef(null)
     const listener = e => {
         if (refCont && !refCont?.current?.contains(e.target)) {
@@ -29,7 +29,7 @@ export default function OffCanvas({show, setShow, children, onCanvasExit }) {
     return (
         <>
             <Wrap show={show}>
-                <Container ref={refCont} show={show}>
+                <Container padding={padding} ref={refCont} show={show}>
                     {children}
                 </Container>
             </Wrap>

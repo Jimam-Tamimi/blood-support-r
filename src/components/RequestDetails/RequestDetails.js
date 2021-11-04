@@ -1,4 +1,8 @@
 import React, {useState} from 'react'
+import {FaBan} from 'react-icons/fa'
+
+
+
 import {
     RequestDetailsMap,
     RequestAllDetailsRow,
@@ -24,7 +28,7 @@ import {
 } from '../../globalStyles'
 
 import Map from '../Map/Map'
-import ReqDropdown from '../ReqDropdown/ReqDropdown'
+import Dropdown from '../Dropdown/Dropdown'
 import {Marker} from 'react-google-maps'
 
 
@@ -41,6 +45,14 @@ export default function RequestDetails({children}) {
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima qui minus assumenda, accusantium quidem maiores sapiente ipsum. Eligendi illo dolore ',
         coords: {lat:24.0077202, lng:89.2429551}
     })
+    const report = () => {
+        // call api to report this request
+        console.log("report request" )
+    }
+
+    const [dropDownOption, setDropDownOption] = useState([
+        {name: "Report", icon: FaBan, onClick: report}
+    ])
     
     
     const [cords, setCords] = useState({lat:24.0077202, lng:89.2429551})
@@ -109,7 +121,7 @@ export default function RequestDetails({children}) {
                         </DetailsDiv>
                         <ActionDiv>
                             <Action>
-                                <ReqDropdown  />
+                                <Dropdown  options={dropDownOption}/>
                             </Action>
                             <Action>
                                 <Badge info style={{position: "absolute", width: "max-content", right: "6px", top: "20px"}} >10 Request Got</Badge>

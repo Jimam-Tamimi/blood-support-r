@@ -467,16 +467,8 @@ export const DetailsDiv = styled.div`
     ${Flex}
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 35px 50px; 
-    align-items: flex-start;
-    width: 95%;
-    margin: auto;
-    @media only screen and (max-width: 800px){
-        &{
-            padding: 10px; 
-        }
-    }
+    align-items: flex-start; 
+
 
 `
 export const DetailHeader = styled.h4`
@@ -511,6 +503,38 @@ export const ButtonDiv = styled.div`
   ${Flex}
   margin: 10px 0px;
 
+`
+
+
+
+
+export const DetailsMap = styled.div`
+    width: 100%;
+    
+`
+
+
+export const AllDetails = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 35px 50px; 
+    @media only screen and (max-width: 800px){
+        &{
+            padding: 10px; 
+        }
+    }
+ 
+
+`
+
+export const ActionDiv = styled.div`
+    
+`
+
+export const Action = styled.div`
+    position: relative;
+    margin: 10px 0px;
 `
 
 

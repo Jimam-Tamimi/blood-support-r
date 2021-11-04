@@ -17,15 +17,25 @@ import {FaBan} from 'react-icons/fa'
 import Map from '../Map/Map'
 import { Button, Badge, IconDiv, ButtonLink } from '../../globalStyles'
 import {Marker} from 'react-google-maps'
-import ReqDropdown from '../ReqDropdown/ReqDropdown'
+import Dropdown from '../Dropdown/Dropdown'
 
 export default function BloodRequest({setShowRequestDetails, setRequestId}) {
     const [details, setDetails] = useState({ 
         'Time': '02/1/2006',
         'Blood Group': 'A+',
         'Description': 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima qui minus assumenda, accusantium quidem maiores sapiente ipsum. Eligendi illo dolore '
-    })
-    const dropDown = useRef(null)
+    }) 
+
+    const report = () => {
+        // call api to report this request
+        console.log("report request")
+    }
+
+    const [dropDownOption, setDropDownOption] = useState([
+        {name: "Report", icon: FaBan, onClick: report}
+    ])
+    
+    
     const [cords, setCords] = useState({lat:24.0077202, lng:89.2429551})
     
     return (
@@ -51,7 +61,7 @@ export default function BloodRequest({setShowRequestDetails, setRequestId}) {
                 </RequestAddress>
                 <RequestDetails> 
                     <NumOfReq style={{width: "100%"}}>
-                        <ReqDropdown absolute />
+                        <Dropdown options={dropDownOption} absolute />
                         {/* <IconDiv onClick={e => setShowDropdown(!showDropdown)} style={{margin: "unset", position: "absolute", top: "-4px", right: "-16px"}} scaleOnHover  width="30px" fontSize="20px" height="30px">
                             <BsThreeDotsVertical/>
                         </IconDiv>

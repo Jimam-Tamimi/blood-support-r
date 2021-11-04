@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Dashboard from '../components/Dashboard/Dashboard'
 import Navbar from '../components/Navbar/Navbar'
 import { Container, Wraper } from '../globalStyles'
@@ -11,18 +11,12 @@ import GuestComponent from './GuestComponent'
 import AlertComponent from '../components/Alert/AlertComponent'
 
 import styled from 'styled-components'
+import { ConfigContext } from '../context/DesignConfig'
 
 
 export default function Layout({children}) {
-    let width = window.innerWidth
-    const [show, setShow] = useState(width <= 748? false: true)
-    const [smallDevice, setSmallDevice] = useState(width <= 748? true: false)
-    let darkMd = localStorage.getItem('darkMode') 
-    const [darkMode, setDarkMode] = useState(darkMd == null?true:JSON.parse(darkMd))
-    
-    useEffect(() => {
-        localStorage.setItem('darkMode', darkMode)
-    }, [darkMode])
+    const designConfig = useContext(ConfigContext) 
+    const {darkMode, setDarkMode, show, setShow, smallDevice, setSmallDevice} = designConfig
 
     const toggleDash = () => {
         setShow(!show)

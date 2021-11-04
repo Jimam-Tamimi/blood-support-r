@@ -15,12 +15,14 @@ import Signup from "./pages/account/Signup";
 import ResetPassword from "./pages/account/ResetPassword";
 import Activate from "./pages/account/Activate";
 import HelpPeople from "./pages/dashboard/HelpPeople";
+import DesignConfig from "./context/DesignConfig";
 
 
 function App() {
   
   return (
     <>
+    <DesignConfig>
       <Layout>
         <PrivateRoute>
           <Route path='/dashboard/' component={Home} />
@@ -36,6 +38,7 @@ function App() {
 
         </GuestRoute>
       </Layout>
+    </DesignConfig>
     </>
   );
 }

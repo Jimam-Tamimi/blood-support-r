@@ -39,7 +39,8 @@ export const Container = styled.div`
     align-items: center;
     justify-content: flex-start;
     overflow: auto;
-
+    padding:${({padding}) => padding?padding:'' };
+    
 
     @media only screen and (max-width: 800px){
         &{
