@@ -23,6 +23,7 @@ function App() {
   return (
     <>
     <DesignConfig>
+
       <Layout>
         <PrivateRoute>
           <Route path='/dashboard/' component={Home} />

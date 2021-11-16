@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 
 import {IoSend, IoClose} from 'react-icons/io5'
@@ -21,11 +21,12 @@ import {
     EmojiMessageDiv,
     EmojiMessage,
     MessageInputBox,
+    EmojiWrap,
 } from './MessagePopup.styles'
 export default function Message({id, name, image, profileId}) {
-
-    const [msg, setMsg] = useState('')
+ 
     const [closeMessageId, setCloseMessageId] = useState(null)
+    const [showEmojiOption, setShowEmojiOption] = useState(false)
     const dispatch = useDispatch()
     const handleCloseMessage = id => {
         setCloseMessageId(id)
@@ -33,8 +34,31 @@ export default function Message({id, name, image, profileId}) {
             setCloseMessageId(null)
             dispatch(removeMessage(id))
 
-        }, 400);
+        }, 400);        
     }
+
+
+    // code for hiding emoji selector on outside click 
+    const refCont = useRef(null)
+    const listener = e => {
+        if (refCont && !refCont?.current?.contains(e.target)) {
+            setShowEmojiOption(false) 
+        }
+    }
+
+    useEffect(() => {
+        if(showEmojiOption){
+            window.addEventListener("click", listener)
+            return () => {
+                window.removeEventListener("click", listener)
+            }
+        }  
+    }, [showEmojiOption ])
+
+
+    // code for sending message
+    const [message, setMessage] = useState('')
+    
 
     return (
         <>
@@ -52,11 +76,13 @@ export default function Message({id, name, image, profileId}) {
 
                 </MessagesDiv>
                 <SendMessaageDiv>
-                    {/* <Picker set='facebook' /> */}
-                    <EmojiMessageDiv>
-                        <HiEmojiHappy />
+                    <EmojiWrap ref={refCont} show={showEmojiOption}>
+                        <Picker onClick={(emoji, e) => {setMessage(message + emoji.native)}} style={{position: "relative",  width: "unset" }} set='facebook' />
+                    </EmojiWrap>
+                    <EmojiMessageDiv onClick={e => setShowEmojiOption(!showEmojiOption)}>
+                        <HiEmojiHappy  />
                     </EmojiMessageDiv>
-                    <MessageInputBox value={msg} onChange={e=> setMsg(e.target.value)} placeholder="Message" />
+                    <MessageInputBox value={message} onChange={e=> setMessage(e.target.value)} placeholder="Message" />
                     <EmojiMessageDiv>
                         <IoSend />
                     </EmojiMessageDiv>

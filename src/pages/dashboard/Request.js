@@ -427,7 +427,7 @@ const YourDonorRequest = () => {
     coords: { lat: 24.0077202, lng: 89.2429551 }
   })
   const [autoComplete, setAutoComplete] = useState(null);
-  const [coords, setCoords] = useState({});
+  const [coords, setCoords] = useState( { lat: 24.0077202, lng: 89.2429551 });
   const [mark, setMark] = useState(false);
   function setCurrentLocation() {
     navigator.geolocation.getCurrentPosition(
@@ -528,7 +528,7 @@ const YourDonorRequest = () => {
                 title="Update Request Form"
                 lg
                 info
-                btnText="Help"
+                btnText="Update"
               >
                 <FormWrap>
                   <Form

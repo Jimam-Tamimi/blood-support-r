@@ -164,3 +164,20 @@ export const MessageInputBox = styled.input`
     box-shadow: 0px 0px 17px 2px #00000040;
 `
 
+
+
+export const EmojiWrap = styled.div`
+    position: absolute; 
+    z-index: 11;
+    right: -36px;
+    width: 100%;
+    bottom: 46px;
+    ${({show}) => show?`
+    transform: scale(1);
+    opacity: 1;
+    `:`
+    transform: scale(0);
+    opacity: 0;
+    `}
+`
+
